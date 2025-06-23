@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Super Události{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header class="navbar">
+    <nav class="nav-left">
+        <a href="#">Home</a>
+        <a href="#">Seznam Událostí</a>
+        <a href="#">Vyhledávání</a>
+    </nav>
+    <div class="logo">
+        <a href="/">Super Události</a>
+    </div>
+    <nav class="nav-right">
+        <a href="#">O nás</a>
+        <a href="#">Přihlášení</a>
+    </nav>
+</header>
+
+<main class="content">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2025 Super Události | Franců Patrik | </p>
+</footer>
+
+</body>
+</html>
