@@ -1,0 +1,22 @@
+{% extends 'viewer/base.html' %}
+
+{% block title %}
+Super Události | Domů
+{% endblock %}
+
+{% block content %}
+  <h1>Seznam událostí</h1>
+    <p>ZKOUŠKA HOMEPAGE</p>
+  <ul>
+    {% for event in events %}
+      <li>
+
+        <a href="{% url 'event-detail' event.pk %}">
+          {{ event.name }} ({{ event.start_date|date:"d.m.Y" }})
+        </a>
+      </li>
+    {% empty %}
+      <li>Žádné události zatím nejsou.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

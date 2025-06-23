@@ -57,6 +57,7 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] Obrázek (volitelně)
 
 - [ ] **3.0 Seznam událostí**
+  - [ ] Zobrazení jména událostí
   - [ ] Seřazeno podle nejbližšího data
   - [ ] Titulek, datum, prvních 50 znaků popisu
 
@@ -69,9 +70,9 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] Výsledky na nové stránce s možností opětovného hledání
 
 - [ ] **5.0 Detail události**
-  - [ ] Název, datum od/do, celý popis
-  - [ ] Obrázek (pokud je)
-  - [ ] Propojení z domovské stránky
+  - [x] 5.1 Název, datum od/do, celý popis
+  - [x] 5.2 Obrázek (pokud je)
+  - [ ] 5.3 Propojení z domovské stránky
 
 - [ ] **6.0 Komentáře k události**
   - [ ] Pouze přihlášení uživatelé
@@ -100,3 +101,60 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 - [ ] **11.0 Externí frontend aplikace**
   - [ ] Využívá REST API pro zobrazení událostí
   - [ ] (volitelně) filtrování na straně frontend aplikace
+
+
+### Struktura databáze
+
+#### Databáze
+
+
+- [x] 1.0 Country
+  - [x] 1.1 name
+
+- [x] 2.0 City
+  - [x] 2.1 name
+  - [x] 2.2 country (FK -> Country)
+  - [x] 2.3 zip_code
+
+- [x] 3.0 Location
+  - [x] 3.1 name
+  - [x] 3.2 city (FK -> City)
+  - [x] 3.4 latitude
+  - [x] 3.5 longitude
+
+- [x] 4.0 Event
+  - [x] 4.1 name
+  - [x] 4.2 description
+  - [x] 4.3 start_date
+  - [x] 4.4 end_date
+  - [x] 4.5 event_image
+  - [x] 4.6 owner_of_event (FK -> User)
+  - [x] 4.7 location (FK - > Location)
+ 
+- [x] 5.0 Comment
+  - [x 5.1 user (FK -> User)
+  - [x] 5.2 event (FK -> Event)
+  - [x 5.3 content
+  - [x] 5.4 date_posted
+
+```plaintext
+Event ---* Comment --- User
+  |
+  |
+ Location
+
+Event má 1 Lokaci (Location) 
+Event může mít více Komentářů (Comment)
+Jeden komentář (Comment) patří 1 Uživateli (User)
+Jeden Event patří 1 Uživateli (User) *Musí to být organizátor
+
+
+
+```
+# DODĚLAT!!!
+
+
+
+- V budoucnu:
+- LIGHT/DARK REŽIM
+- VÍCE OBRÁZKŮ U JEDNÉ UDÁLOSTI (SLIDER DO BOKU)
