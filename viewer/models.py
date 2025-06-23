@@ -10,6 +10,7 @@ class Country(models.Model):
 
     class Meta:
         ordering = ['name']
+        verbose_name_plural = 'Countries'
 
     def __str__(self):
             return self.name
@@ -21,10 +22,11 @@ class Country(models.Model):
 class City(models.Model):
     name = models.CharField(max_length=100, unique=False, null=False, blank=False)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="cities")
-    zip_code = models.CharField(max_length=50, unique=True, null=False, blank=False)
+    zip_code = models.CharField(max_length=50, null=False, blank=False)
 
     class Meta:
         ordering = ['name']
+        verbose_name_plural = 'Cities'
 
     def __str__(self):
         return self.name
@@ -52,10 +54,11 @@ class Location(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=100, unique=True, null=False, blank=False)
     description = models.TextField(null=True, blank=True)
+    event_image = models.ImageField(upload_to='event_images/', null=True, blank=True)
     start_date = models.DateField(null=False, blank=False)
     end_date = models.DateField(null=False, blank=False)
     location = models.ForeignKey(Location, on_delete=models.CASCADE, related_name="events")
-    owner_of_event = models.ForeignKey(User, on_delete=models.CASCADE, related_name="events")
+    owner_of_event = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owned_events")
 
     class Meta:
         ordering = [ 'start_date', 'name',]

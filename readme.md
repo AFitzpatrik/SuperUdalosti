@@ -57,6 +57,7 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] Obrázek (volitelně)
 
 - [ ] **3.0 Seznam událostí**
+  - [ ] Zobrazení jména událostí
   - [ ] Seřazeno podle nejbližšího data
   - [ ] Titulek, datum, prvních 50 znaků popisu
 
@@ -69,9 +70,9 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] Výsledky na nové stránce s možností opětovného hledání
 
 - [ ] **5.0 Detail události**
-  - [ ] Název, datum od/do, celý popis
-  - [ ] Obrázek (pokud je)
-  - [ ] Propojení z domovské stránky
+  - [x] 5.1 Název, datum od/do, celý popis
+  - [x] 5.2 Obrázek (pokud je)
+  - [ ] 5.3 Propojení z domovské stránky
 
 - [ ] **6.0 Komentáře k události**
   - [ ] Pouze přihlášení uživatelé
@@ -156,3 +157,4 @@ Jeden Event patří 1 Uživateli (User) *Musí to být organizátor
 
 - V budoucnu:
 - LIGHT/DARK REŽIM
+- VÍCE OBRÁZKŮ U JEDNÉ UDÁLOSTI (SLIDER DO BOKU)

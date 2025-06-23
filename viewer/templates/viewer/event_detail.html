@@ -1,0 +1,35 @@
+{% extends 'viewer/base.html' %}
+
+{% block title %}
+{{ event.name }} | Super Události
+{% endblock %}
+
+{% block content %}
+<h1>{{ event.name }}</h1>
+
+<div class="event-dates">
+  <p><strong>Od:</strong> {{ event.start_date | date:"d.m.Y" }}</p>
+  <p><strong>Do:</strong> {{ event.end_date | date:"d.m.Y" }}</p>
+</div>
+
+<h2>Popis události</h2>
+<p>{{ event.description }}</p><br>
+
+{% if event.event_image %}
+<img class="event-image" src="{{ event.event_image.url }}" alt="Obrázek události">
+{% else %}
+<p>Obrázek není k dispozici.</p>
+{% endif %}<br>
+
+<h3>Komentáře:</h3>
+<ul>
+    {% for comment in event.comments.all %}
+    <li>
+        <strong>{{ comment.user.username }}</strong>:
+        {{ comment.content }} ({{ comment.date_posted }})
+    </li>
+    {% empty %}
+    <li>Žádné komentáře zatím nejsou.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
