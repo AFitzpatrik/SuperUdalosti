@@ -1,3 +1,45 @@
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.event-dates {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 1rem 0 2rem; /* více dolní mezery */
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem; /* mezera pod odstavcem */
+}
+
+.event-image {
+  display: block;
+  max-width: 60%;
+  margin: 2rem auto; /* střed + odstup */
+  border-radius: 8px;
+}
+
+ul {
+  margin-top: 1rem;
+  padding-left: 1.5rem; /* odsadit tečky */
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
 
 * {
     margin: 0;
@@ -73,3 +115,11 @@ footer a {
 footer a:hover {
     color: #7a92b0;
 }
+
+.event-dates {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
