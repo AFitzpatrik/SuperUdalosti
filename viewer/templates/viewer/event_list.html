@@ -22,7 +22,7 @@ Seznam Událostí | Super Události
                 <strong>
                     <a class="event-title" href="{% url 'event-detail' event.pk %}">{{ event.name }}</a>
                 </strong><br>
-                {{ event.start_date|date:"d.m.Y" }} - {{ event.end_date|date:"d.m.Y" }}<br>
+                <strong>{{ event.start_date|date:"d.m.Y" }} - {{ event.end_date|date:"d.m.Y" }}</strong><br>
                 {{ event.description|slice:":190" }}...
             </div>
         </div>
