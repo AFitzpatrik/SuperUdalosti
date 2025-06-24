@@ -20,11 +20,14 @@ from django.contrib import admin
 from django.urls import path
 
 from viewer import views
+from viewer.views import HomepageView, EventListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('event/<int:pk>/', views.EventDetailView.as_view(), name='event-detail'),
+    path('events/', EventListView.as_view(), name='event-list'),
+    path('', HomepageView.as_view(), name='homepage'),
 
 ]
 

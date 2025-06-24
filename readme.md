@@ -56,9 +56,9 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] Vlastník (uživatel, který ji vytvořil)
   - [ ] Obrázek (volitelně)
 
-- [ ] **3.0 Seznam událostí**
-  - [ ] Seřazeno podle nejbližšího data
-  - [ ] Titulek, datum, prvních 50 znaků popisu
+- [x] **3.0 Seznam událostí**
+  - [x] 3.1 Seřazeno podle nejbližšího data
+  - [x] 3.2 Titulek, datum, prvních 50 znaků popisu
 
 - [ ] **4.0 Vyhledávač událostí**
   - [ ] Textové pole pro hledání v názvu
