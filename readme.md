@@ -68,10 +68,10 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
     - [ ] Všechny
   - [ ] Výsledky na nové stránce s možností opětovného hledání
 
-- [ ] **5.0 Detail události**
+- [x] **5.0 Detail události**
   - [x] 5.1 Název, datum od/do, celý popis
   - [x] 5.2 Obrázek (pokud je)
-  - [ ] 5.3 Propojení z domovské stránky
+  - [x] 5.3 Propojení z domovské stránky
 
 - [ ] **6.0 Komentáře k události**
   - [ ] Pouze přihlášení uživatelé
@@ -117,7 +117,8 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 
 - [x] 3.0 Location
   - [x] 3.1 name
-  - [x] 3.2 city (FK -> City)
+  - [x] 3.2 address (street, number)
+  - [x] 3.3 city (FK -> City)
   - [x] 3.4 latitude
   - [x] 3.5 longitude
 
