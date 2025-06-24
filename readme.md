@@ -42,31 +42,31 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 ## Funkcionality aplikace
 
 - [ ] **1.0 Registrace a přihlášení uživatele**
-  - [ ] Email jako přihlašovací údaj
-  - [ ] Ověření platnosti emailu
-  - [ ] Heslo 8–30 znaků
-  - [ ] Zobrazované jméno – nepovolené prázdné nebo jen mezery
-  - [ ] Role: běžný uživatel / organizátor
-  - [ ] Heslo bezpečně uložené (hash)
+  - [ ] 1.1 Email jako přihlašovací údaj
+  - [ ] 1.2 Ověření platnosti emailu
+  - [ ] 1.3 Heslo 8–30 znaků
+  - [ ] 1.4 Zobrazované jméno – nepovolené prázdné nebo jen mezery
+  - [ ] 1.5 Role: běžný uživatel / organizátor
+  - [ ] 1.6 Heslo bezpečně uložené (hash)
 
 - [ ] **2.0 Přidávání událostí (jen organizátor)**
-  - [ ] Název (povinný)
-  - [ ] Datum od/do
-  - [ ] Popis (min. 20 znaků)
-  - [ ] Vlastník (uživatel, který ji vytvořil)
-  - [ ] Obrázek (volitelně)
+  - [ ] 2.1 Název (povinný)
+  - [ ] 2.2 Datum od/do
+  - [ ] 2.3 Popis (min. 20 znaků)
+  - [ ] 2.4 Vlastník (uživatel, který ji vytvořil)
+  - [ ] 2.5 Obrázek (volitelně)
 
 - [x] **3.0 Seznam událostí**
   - [x] 3.1 Seřazeno podle nejbližšího data
   - [x] 3.2 Titulek, datum, prvních 50 znaků popisu
 
 - [ ] **4.0 Vyhledávač událostí**
-  - [ ] Textové pole pro hledání v názvu
-  - [ ] Filtrování podle času:
-    - [ ] Budoucí
-    - [ ] Probíhající a budoucí
-    - [ ] Všechny
-  - [ ] Výsledky na nové stránce s možností opětovného hledání
+  - [ ] 4.1 Textové pole pro hledání v názvu
+  - [ ] 4.2 Filtrování podle času:
+    - [ ] 4.2.0 Budoucí
+    - [ ] 4.2.1 Probíhající a budoucí
+    - [ ] 4.2.2 Všechny
+  - [ ] 4.3 Výsledky na nové stránce s možností opětovného hledání
 
 - [x] **5.0 Detail události**
   - [x] 5.1 Název, datum od/do, celý popis
@@ -74,32 +74,32 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [x] 5.3 Propojení z domovské stránky
 
 - [ ] **6.0 Komentáře k události**
-  - [ ] Pouze přihlášení uživatelé
-  - [ ] Max. 500 znaků
-  - [ ] Seřazené od nejnovějších
+  - [ ] 6.1 Pouze přihlášení uživatelé
+  - [ ] 6.2 Max. 500 znaků
+  - [ ] 6.3 Seřazené od nejnovějších
 
 - [ ] **7.0 Přihlašování na událost**
-  - [ ] Tlačítko pro přihlášení / odhlášení
-  - [ ] Pouze pro přihlášené uživatele
-  - [ ] Zobrazení všech registrovaných uživatelů
+  - [ ] 7.1 Tlačítko pro přihlášení / odhlášení
+  - [ ] 7.2 Pouze pro přihlášené uživatele
+  - [ ] 7.3 Zobrazení všech registrovaných uživatelů
 
 - [ ] **8.0 Moje události**
-  - [ ] Seznam vlastních událostí a těch, na které je uživatel přihlášen
-  - [ ] Filtrování podle role (organizátor / účastník)
-  - [ ] Filtrování podle data (budoucí, probíhající, minulé)
-  - [ ] Volitelně: filtrování podle rozsahu datumů
+  - [ ] 8.1 Seznam vlastních událostí a těch, na které je uživatel přihlášen
+  - [ ] 8.2 Filtrování podle role (organizátor / účastník)
+  - [ ] 8.3 Filtrování podle data (budoucí, probíhající, minulé)
+  - [ ] 8.4 Volitelně: filtrování podle rozsahu datumů
 
 - [ ] **9.0 Úprava události**
-  - [ ] Pouze vlastník nebo administrátor
-  - [ ] Možnost úpravy z detailu události
+  - [ ] 9.1 Pouze vlastník nebo administrátor
+  - [ ] 9.2 Možnost úpravy z detailu události
 
 - [ ] **10.0 API**
-  - [ ] REST API se seznamem všech budoucích událostí
-  - [ ] Možnost filtrování podle časového období
+  - [ ] 10.1 REST API se seznamem všech budoucích událostí
+  - [ ] 10.2 Možnost filtrování podle časového období
 
 - [ ] **11.0 Externí frontend aplikace**
-  - [ ] Využívá REST API pro zobrazení událostí
-  - [ ] (volitelně) filtrování na straně frontend aplikace
+  - [ ] 11.1 Využívá REST API pro zobrazení událostí
+  - [ ] 11.2 (volitelně) filtrování na straně frontend aplikace
 
 
 ### Struktura databáze
