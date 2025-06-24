@@ -10,10 +10,11 @@ Seznam Událostí | Super Události
   <ul>
     {% for event in events %}
       <li>
-        <strong>{{ event.name }}</strong>
+        <strong>
+          <a href="{% url 'event-detail' event.pk %}">{{ event.name }}</a>
+        </strong><br>
         {{ event.start_date|date:"d.m.Y" }} - {{ event.end_date|date:"d.m.Y" }}<br>
         {{ event.description|slice:":100" }}...<br>
-        <a href="{% url 'event-detail' event.pk %}">Detail</a>
       </li>
     {% empty %}
       <li>Žádné události zatím nejsou.</li>
