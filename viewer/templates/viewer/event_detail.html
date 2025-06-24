@@ -10,8 +10,17 @@
 <div class="event-dates">
     <span><strong>Od:</strong> {{ event.start_date | date:"d.m.Y" }}</span>
     <span><strong>Do:</strong> {{ event.end_date | date:"d.m.Y" }}</span>
+</div><br>
+<div>
+    {{ event.location.name }}<br>
+    {{ event.location.address }}<br>
+    {{ event.location.city.name }}, {{ event.location.city.country.name }}<br>
 </div>
-<br>
+
+<div class="coordinates">
+    <strong>Souřadnice:</strong>
+    LA: {{ event.location.latitude }}, LO: {{ event.location.longitude }}
+</div><br>
 {% if event.event_image %}
 <img alt="Obrázek události" src="{{ event.event_image.url }}" style="max-width: 500px;">
 {% else %}

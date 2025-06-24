@@ -37,6 +37,7 @@ class City(models.Model):
 
 class Location(models.Model):
     name = models.CharField(max_length=100, unique=True, null=True, blank=True)
+    address = models.CharField(max_length=255, null=True, blank=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="locations")
     latitude = models.FloatField(null=False, blank=False)
     longitude = models.FloatField(null=False, blank=False)
