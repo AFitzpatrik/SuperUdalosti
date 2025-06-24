@@ -8,18 +8,17 @@
 <h1>{{ event.name }}</h1>
 
 <div class="event-dates">
-  <p><strong>Od:</strong> {{ event.start_date | date:"d.m.Y" }}</p>
-  <p><strong>Do:</strong> {{ event.end_date | date:"d.m.Y" }}</p>
+    <span><strong>Od:</strong> {{ event.start_date | date:"d.m.Y" }}</span>
+    <span><strong>Do:</strong> {{ event.end_date | date:"d.m.Y" }}</span>
 </div>
-
-<h2>Popis události</h2>
-<p>{{ event.description }}</p><br>
-
+<br>
 {% if event.event_image %}
-<img class="event-image" src="{{ event.event_image.url }}" alt="Obrázek události">
+<img alt="Obrázek události" src="{{ event.event_image.url }}" style="max-width: 500px;">
 {% else %}
 <p>Obrázek není k dispozici.</p>
-{% endif %}<br>
+{% endif %}
+
+<p>{{ event.description }}</p><br>
 
 <h3>Komentáře:</h3>
 <ul>

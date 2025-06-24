@@ -56,10 +56,9 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] Vlastník (uživatel, který ji vytvořil)
   - [ ] Obrázek (volitelně)
 
-- [ ] **3.0 Seznam událostí**
-  - [ ] Zobrazení jména událostí
-  - [ ] Seřazeno podle nejbližšího data
-  - [ ] Titulek, datum, prvních 50 znaků popisu
+- [x] **3.0 Seznam událostí**
+  - [x] 3.1 Seřazeno podle nejbližšího data
+  - [x] 3.2 Titulek, datum, prvních 50 znaků popisu
 
 - [ ] **4.0 Vyhledávač událostí**
   - [ ] Textové pole pro hledání v názvu
@@ -157,4 +156,3 @@ Jeden Event patří 1 Uživateli (User) *Musí to být organizátor
 
 - V budoucnu:
 - LIGHT/DARK REŽIM
-- VÍCE OBRÁZKŮ U JEDNÉ UDÁLOSTI (SLIDER DO BOKU)

@@ -1,21 +1,22 @@
 {% extends 'viewer/base.html' %}
 
 {% block title %}
-Seznam událostí | Super Události
+Seznam Událostí | Super Události
 {% endblock %}
 
 {% block content %}
-<h1>Seznam událostí</h1>
+  <h1>Seznam Událostí</h1>
 
-<ul>
-  {% for event in events %}
-    <li>
-      <a href="{% url 'event-detail' event.pk %}">
-        {{ event.name }} ({{ event.start_date|date:"d.m.Y" }})
-      </a>
-    </li>
-  {% empty %}
-    <li>Žádné události nejsou k dispozici.</li>
-  {% endfor %}
-</ul>
+  <ul>
+    {% for event in events %}
+      <li>
+        <strong>{{ event.name }}</strong>
+        {{ event.start_date|date:"d.m.Y" }} - {{ event.end_date|date:"d.m.Y" }}<br>
+        {{ event.description|slice:":100" }}...<br>
+        <a href="{% url 'event-detail' event.pk %}">Detail</a>
+      </li>
+    {% empty %}
+      <li>Žádné události zatím nejsou.</li>
+    {% endfor %}
+  </ul>
 {% endblock %}
