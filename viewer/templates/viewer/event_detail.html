@@ -8,9 +8,10 @@
 <h1>{{ event.name }}</h1>
 
 <div class="event-dates">
-    <span><strong>Od:</strong> {{ event.start_date | date:"d.m.Y" }}</span>
-    <span><strong>Do:</strong> {{ event.end_date | date:"d.m.Y" }}</span>
-</div><br>
+    <span><strong>Od:</strong> {{ event.start_date | date:"d.m.Y" }}, {{ event.start_time|time:"H:i" }} </span><br>
+    <span><strong>Do:</strong> {{ event.end_date | date:"d.m.Y" }}, {{ event.end_time|time:"H:i" }} </span>
+</div>
+<br>
 <div>
     {{ event.location.name }}<br>
     {{ event.location.address }}<br>

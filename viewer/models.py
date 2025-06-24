@@ -58,6 +58,8 @@ class Event(models.Model):
     event_image = models.ImageField(upload_to='event_images/', null=True, blank=True)
     start_date = models.DateField(null=False, blank=False)
     end_date = models.DateField(null=False, blank=False)
+    start_time = models.TimeField(null=False, blank=False)
+    end_time = models.TimeField(null=False, blank=False)
     location = models.ForeignKey(Location, on_delete=models.CASCADE, related_name="events")
     owner_of_event = models.ForeignKey(User, on_delete=models.CASCADE, related_name="owned_events")
 
