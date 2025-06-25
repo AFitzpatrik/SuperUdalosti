@@ -48,13 +48,14 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] 1.4 Logout
   - [ ] 1.5 Registrační formulář
 
-### Požadavky pro uživatelský panel
+## Požadavky pro uživatelský panel
   - [ ] 1.6 Email jako přihlašovací údaj
   - [ ] 1.7 Ověření platnosti emailu
   - [ ] 1.8 Heslo 8–30 znaků
   - [ ] 1.9 Zobrazované jméno – nepovolené prázdné nebo jen mezery
   - [ ] 1.10 Role: běžný uživatel / organizátor
   - [ ] 1.11 Heslo bezpečně uložené (hash)
+
 
 - [ ] **2.0 Přidávání událostí**
   - [ ] 2.1 Přidávat může jen organizátor *DODĚLAT PO HOTOVÉ FEATURE 1.0

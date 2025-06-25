@@ -141,3 +141,13 @@ footer a:hover {
     flex: 1;
 }
 
+.event-list-header {
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.event-list-title {
+    font-size: 2.2rem;
+    margin: 0;
+    float: left;
+}

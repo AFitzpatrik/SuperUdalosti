@@ -1,0 +1,19 @@
+.add-event-button {
+    background-color: #1a5a32;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 0 0 2px #1e5a1e;
+    transition: 0.2s;
+    font-size: 0.9rem;
+    float: right;
+    margin-top: -3.4rem;
+}
+
+.add-event-button:hover {
+    background-color: #2d7a4a;
+    box-shadow: 0 0 0 2px #1e5a1e;
+}

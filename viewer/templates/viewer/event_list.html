@@ -6,7 +6,10 @@ Seznam Událostí | Super Události
 {% endblock %}
 
 {% block content %}
-<h1>Seznam událostí</h1>
+<div class="event-list-header">
+    <h1 class="event-list-title">Seznam událostí</h1>
+    <a href="{% url 'event-create' %}" class="add-event-button">➕ Přidat událost</a>
+</div>
 
 <ul>
     {% for event in events %}
