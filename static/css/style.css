@@ -11,6 +11,7 @@ body {
 }
 
 .content {
+    min-width: 1000px;
     max-width: 1000px;
     margin: 2rem auto;
     padding: 1rem;
@@ -36,15 +37,21 @@ body {
 }
 
 .navbar {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    justify-content: space-between;
-    align-items: center;
     background: #0f1a2d;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+.navbar-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 1000px;
 }
 
 .navbar nav a,
@@ -76,6 +83,7 @@ body {
 
 .logo {
     text-align: center;
+    justify-self: center;
 }
 
 .logo a {
@@ -125,12 +133,13 @@ footer a:hover {
 }
 
 .event-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 2rem;
-    overflow: hidden;
 }
 
 .event-list-title {
     font-size: 2.2rem;
     margin: 0;
-    float: left;
 }
