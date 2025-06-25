@@ -29,8 +29,11 @@
 {% endif %}
 
 <p>{{ event.description }}</p><br>
+<p><strong>Přidal:</strong> {{ event.owner_of_event.username }}, {{ event.owner_of_event.get_full_name }}</p>
 
+<br>
 <h3>Komentáře:</h3>
+
 <ul>
     {% for comment in event.comments.all %}
     <li>

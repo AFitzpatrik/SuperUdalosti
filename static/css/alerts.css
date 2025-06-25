@@ -1,0 +1,19 @@
+ul.errorlist {
+  color: #b30000;
+  font-weight: bold;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+ul.errorlist li {
+  margin-bottom: 0.3rem;
+}
+
+ul.errorlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}

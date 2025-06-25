@@ -49,12 +49,13 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] 1.5 Role: běžný uživatel / organizátor
   - [ ] 1.6 Heslo bezpečně uložené (hash)
 
-- [ ] **2.0 Přidávání událostí (jen organizátor)**
-  - [ ] 2.1 Název (povinný)
-  - [ ] 2.2 Datum od/do
-  - [ ] 2.3 Popis (min. 20 znaků)
-  - [ ] 2.4 Vlastník (uživatel, který ji vytvořil)
-  - [ ] 2.5 Obrázek (volitelně)
+- [ ] **2.0 Přidávání událostí**
+  - [ ] 2.1 Přidávat může jen organizátor
+  - [x] 2.1 Název (povinný)
+  - [x] 2.2 Datum od/do (povinný)
+  - [x] 2.3 Popis (min. 20 znaků)
+  - [x] 2.4 Vlastník (uživatel, který ji vytvořil)
+  - [x] 2.5 Obrázek (volitelně)
 
 - [x] **3.0 Seznam událostí**
   - [x] 3.1 Seřazeno podle nejbližšího data

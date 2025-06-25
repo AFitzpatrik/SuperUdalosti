@@ -1,0 +1,20 @@
+{% extends 'viewer/base.html' %}
+
+{% block title %}
+    Formulář
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Odeslat" class="btn btn-primary">
+    </form>
+{% endblock %}
+
+
+
+
+<!-- Možná později přepsat na {{ form.field }} místo {{ form.as_table }} pro lepší rozvržen   -->
