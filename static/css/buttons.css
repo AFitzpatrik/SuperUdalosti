@@ -10,7 +10,7 @@
     transition: 0.2s;
     font-size: 0.9rem;
     float: right;
-    margin-top: -3.5rem;  /* Meh řešení, když bude čas pokusit se udělat elegantněji */
+    margin-top: -3.5rem;  /* This is a single-line comment */
 }
 
 .add-event-button:hover {

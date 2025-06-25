@@ -15,12 +15,14 @@
         <a href="{% url 'homepage' %}">Home</a>
         <a href="{% url 'event-list' %}">Seznam Událostí</a>
         <a href="#">Vyhledávání</a>
-        <a href="{% url 'event-create' %}" class="add-event-button">➕ Přidat událost</a>
     </nav>
+
     <div class="logo">
         <a href="/">Super Události</a>
     </div>
+
     <nav class="nav-right">
+        <a href="{% url 'event-create' %}" class="add-event-button">➕ Přidat událost</a>
         <a href="#">O nás</a>
         <a href="#">Přihlášení</a>
         <a href="#">Registrace</a>
