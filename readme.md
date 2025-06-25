@@ -42,15 +42,22 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 ## Funkcionality aplikace
 
 - [ ] **1.0 Registrace a přihlášení uživatele**
-  - [ ] 1.1 Email jako přihlašovací údaj
-  - [ ] 1.2 Ověření platnosti emailu
-  - [ ] 1.3 Heslo 8–30 znaků
-  - [ ] 1.4 Zobrazované jméno – nepovolené prázdné nebo jen mezery
-  - [ ] 1.5 Role: běžný uživatel / organizátor
-  - [ ] 1.6 Heslo bezpečně uložené (hash)
+  - [ ] 1.1 Zobrazení přihlášeného uživatele
+  - [ ] 1.2 Omezení zobrazení pouze pro přihlášené uživatele/role (LoginRequiredMixin)
+  - [ ] 1.3 Login
+  - [ ] 1.4 Logout
+  - [ ] 1.5 Registrační formulář
+
+### Požadavky pro uživatelský panel
+  - [ ] 1.6 Email jako přihlašovací údaj
+  - [ ] 1.7 Ověření platnosti emailu
+  - [ ] 1.8 Heslo 8–30 znaků
+  - [ ] 1.9 Zobrazované jméno – nepovolené prázdné nebo jen mezery
+  - [ ] 1.10 Role: běžný uživatel / organizátor
+  - [ ] 1.11 Heslo bezpečně uložené (hash)
 
 - [ ] **2.0 Přidávání událostí**
-  - [ ] 2.1 Přidávat může jen organizátor
+  - [ ] 2.1 Přidávat může jen organizátor *DODĚLAT PO HOTOVÉ FEATURE 1.0
   - [x] 2.1 Název (povinný)
   - [x] 2.2 Datum od/do (povinný)
   - [x] 2.3 Popis (min. 20 znaků)
