@@ -10,9 +10,28 @@ body {
     color: #0f1a2d;
 }
 
+.content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
 .content h1 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
+}
+
+.content li {
+    max-width: 100%;
+    overflow: hidden;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #7a92b0;
+    margin-bottom: 1.5rem;
 }
 
 .navbar {
@@ -50,15 +69,6 @@ body {
     font-weight: bold;
 }
 
-.content {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
 footer {
     text-align: center;
     padding: 1rem 2rem;
@@ -74,47 +84,6 @@ footer a {
 
 footer a:hover {
     color: #7a92b0;
-}
-
-.content li {
-    max-width: 100%;
-    overflow: hidden;
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    border-left: 4px solid #7a92b0;
-    margin-bottom: 1.5rem;
-}
-
-/* 🔑 Nadpis události — vlastní class */
-.content li a.event-title {
-    display: inline-block;
-    font-size: 1.4rem; /* zvětši dle potřeby */
-    background: #0f1a2d;
-    color: #ffffff;
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-bottom: 0.7rem;
-}
-
-.content li a.event-title:hover {
-    background: #7a92b0;
-}
-
-/* 📸 Odkaz na obrázek — bez stylů */
-.content li a.event-image-link {
-    display: block;
-}
-
-/* 🗂 Ostatní odkazy — aktuálně žádné, ale zachováno pro budoucnost */
-.content li a:not(.event-title):not(.event-image-link) {
-    /* Prázdné nebo můžeš smazat úplně */
-}
-
-/* Hover pro případný další odkaz */
-.content li a:not(.event-title):not(.event-image-link):hover {
-    /* Prázdné nebo můžeš smazat úplně */
 }
 
 .event-item {

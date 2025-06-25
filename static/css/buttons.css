@@ -10,10 +10,25 @@
     transition: 0.2s;
     font-size: 0.9rem;
     float: right;
-    margin-top: -3.4rem;
+    margin-top: -3.5rem;  /* Meh řešení, když bude čas pokusit se udělat elegantněji */
 }
 
 .add-event-button:hover {
     background-color: #2d7a4a;
-    box-shadow: 0 0 0 2px #1e5a1e;
+    box-shadow: 0 0 0 2px #2d7a4a;
+}
+
+.content li a.event-title {
+    display: inline-block;
+    font-size: 1.4rem;
+    background: #0f1a2d;
+    color: #ffffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 0.7rem;
+}
+
+.content li a.event-title:hover {
+    background: #7a92b0;
 }
