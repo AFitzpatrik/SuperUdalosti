@@ -2,43 +2,38 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Super Události{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/alerts.css' %}">
-    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
 </head>
 <body>
 
-<header class="navbar">
-    <nav class="nav-left">
-        <a href="{% url 'homepage' %}">Home</a>
-        <a href="{% url 'event-list' %}">Seznam Událostí</a>
-        <a href="#">Vyhledávání</a>
-    </nav>
-
-    <div class="logo">
+<nav>
+    <div class="container">
         <a href="/">Super Události</a>
+        
+        <ul>
+            <li><a href="{% url 'homepage' %}">Domů</a></li>
+            <li><a href="{% url 'event-list' %}">Seznam Událostí</a></li>
+            <li><a href="#">Vyhledávání</a></li>
+            <li><a href="#">O nás</a></li>
+            <li><a href="#">Přihlášení</a></li>
+            <li><a href="#">Registrace</a></li>
+        </ul>
     </div>
+</nav>
 
-    <nav class="nav-right">
-        <a href="{% url 'event-create' %}" class="add-event-button">➕ Přidat událost</a>
-        <a href="#">O nás</a>
-        <a href="#">Přihlášení</a>
-        <a href="#">Registrace</a>
-    </nav>
-</header>
-
-<main class="content">
+<main class="container">
     {% block content %}
     {% endblock %}
 </main>
 
 <footer>
-    <p>&copy; 2025 Super Události | Franců Patrik | </p>
+    <div class="container">
+        <p>&copy; 2025 Super Události | Vytvořil <a href="#">Franců Patrik</a></p>
+    </div>
 </footer>
 
 </body>
 </html>
-
-

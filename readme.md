@@ -166,3 +166,4 @@ Jeden Event patří 1 Uživateli (User) *Musí to být organizátor
 
 - V budoucnu:
 - LIGHT/DARK REŽIM
+- https://www.color-hex.com/color-palette/1061837 paleta barev

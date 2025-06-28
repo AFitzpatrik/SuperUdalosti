@@ -1,53 +1,80 @@
 {% extends 'viewer/base.html' %}
 
 {% block title %}
-{{ event.name }} | Detail události
+{{ event.name }} | Super Události
 {% endblock %}
 
 {% block content %}
-<h1>{{ event.name }}</h1>
-
-<div class="event-dates">
-    <span><strong>Od:</strong> {{ event.start_date|date:"d.m.Y" }}, {{ event.start_time|time:"H:i" }}</span>
-    <span><strong>Do:</strong> {{ event.end_date|date:"d.m.Y" }}, {{ event.end_time|time:"H:i" }}</span>
-</div>
-<br>
-<div>
-    {{ event.location.name }}<br>
-    {{ event.location.address }}<br>
-    {{ event.location.city.name }} {{ event.location.city.zip_code }}, {{ event.location.city.country.name }}<br>
+<div class="row">
+    <div class="col-12">
+        <h1>{{ event.name }}</h1>
+    </div>
 </div>
 
-<div class="coordinates">
-    <strong>Souřadnice:</strong>
-    LA: {{ event.location.latitude }}, LO: {{ event.location.longitude }}
-</div><br>
 {% if event.event_image %}
-<img alt="Obrázek události" src="{{ event.event_image.url }}" style="max-width: 500px;">
-{% else %}
-
+<div class="row">
+    <div class="col-12">
+        <img src="{{ event.event_image.url }}" alt="{{ event.name }}">
+    </div>
+</div>
 {% endif %}
 
-<p>{{ event.description }}</p><br>
-<p><strong>Přidal:</strong> {{ event.owner_of_event.username }}, {{ event.owner_of_event.get_full_name }}</p>
-
-<br>
-<div class="comments-section">
-    <h3>Komentáře:</h3>
-    <ul>
-        {% for comment in event.comments.all %}
-        <li>
-            <strong>{{ comment.user.username }}</strong>:
-            {{ comment.content }}
-            <small>({{ comment.date_posted }})</small>
-        </li>
-        {% empty %}
-        <li>Žádné komentáře zatím nejsou.</li>
-        {% endfor %}
-    </ul>
+<div class="row">
+    <div class="col-md-6">
+        <div class="event-card">
+            <h3>Informace o události</h3>
+            <p><strong>Od:</strong> {{ event.start_date|date:"d.m.Y" }}, {{ event.start_time|time:"H:i" }}</p>
+            <p><strong>Do:</strong> {{ event.end_date|date:"d.m.Y" }}, {{ event.end_time|time:"H:i" }}</p>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="event-card">
+            <h3>Lokace</h3>
+            <p><strong>Místo:</strong> {{ event.location.name }}</p>
+            <p><strong>Adresa:</strong> {{ event.location.address }}</p>
+            <p><strong>Město:</strong> {{ event.location.city.name }} {{ event.location.city.zip_code }}, {{ event.location.city.country.name }}</p>
+            <p><strong>Souřadnice:</strong> LA: {{ event.location.latitude }}, LO: {{ event.location.longitude }}</p>
+        </div>
+    </div>
 </div>
 
+<div class="row">
+    <div class="col-12">
+        <div class="event-card">
+            <h3>Popis</h3>
+            <p>{{ event.description }}</p>
+        </div>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-12">
+        <div class="event-card">
+            <h3>Organizátor</h3>
+            <p><strong>Přidal:</strong> {{ event.owner_of_event.username }}, {{ event.owner_of_event.get_full_name }}</p>
+        </div>
+    </div>
+</div>
 
-</ul>
+<div class="row">
+    <div class="col-12">
+        <div class="event-card">
+            <h3>Komentáře</h3>
+            {% for comment in event.comments.all %}
+            <div style="background-color: #e7eaf6; padding: 15px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #38598b;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong style="color: #113f67;">{{ comment.user.username }}</strong>
+                        <p style="margin-top: 5px;">{{ comment.content }}</p>
+                    </div>
+                    <small style="color: #38598b;">{{ comment.date_posted }}</small>
+                </div>
+            </div>
+            {% empty %}
+            <p>Žádné komentáře zatím nejsou. Buďte první!</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
