@@ -15,7 +15,7 @@ def user_logout(request):
 
 
 class SignUpView(CreateView):
-    template_name = 'accounts/signup.html'
+    template_name = 'signup.html'
     form_class = SignUpForm
     success_url = reverse_lazy('homepage')
     

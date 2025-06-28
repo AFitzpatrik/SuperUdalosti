@@ -10,6 +10,7 @@
         <table>
             {{ form.as_table }}
         </table>
+        <a href="{% url 'password-reset' %}" class="btn btn-primary" style="margin-bottom: 10px; display: inline-block;">Zapomněli jste heslo?</a>
         <input type="submit" id="id_submit" value="Přihlásit" class="btn btn-primary">
     </form>
 {% endblock %}

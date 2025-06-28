@@ -42,7 +42,7 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 ## Funkcionality aplikace
 
 - [ ] **1.0 Registrace a přihlášení uživatele**
-  - [ ] 1.1 Zobrazení přihlášeného uživatele
+  - [x] 1.1 Zobrazení přihlášeného uživatele
   - [ ] 1.2 Omezení zobrazení pouze pro přihlášené uživatele/role (LoginRequiredMixin)
   - [x] 1.3 Login
   - [x] 1.4 Logout
