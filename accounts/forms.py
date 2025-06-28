@@ -42,11 +42,6 @@ class SignUpForm(UserCreationForm):
         required=False
     )
 
-    biography = CharField(
-        widget=Textarea,
-        label='Biografie',
-        required=False
-    )
 
     phone = CharField(
         label='Telefon',
@@ -63,12 +58,10 @@ class SignUpForm(UserCreationForm):
 
         # Ještě potřebujeme vytvořit Profile
         date_of_birth = self.cleaned_data.get('date_of_birth')
-        biography = self.cleaned_data.get('biography')
         phone = self.cleaned_data.get('phone')
         profile = Profile(
             user=user,
             date_of_birth=date_of_birth,
-            biography=biography,
             phone=phone
         )
         if commit:
