@@ -4,7 +4,7 @@ from django.db.models import Model, OneToOneField, CASCADE, DateField, TextField
 
 
 
-# Create your models here.
+
 
 
 

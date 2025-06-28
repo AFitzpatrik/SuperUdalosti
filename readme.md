@@ -41,12 +41,12 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 
 ## Funkcionality aplikace
 
-- [ ] **1.0 Registrace a přihlášení uživatele**
+- [x] **1.0 Registrace a přihlášení uživatele**
   - [x] 1.1 Zobrazení přihlášeného uživatele
   - [ ] 1.2 Omezení zobrazení pouze pro přihlášené uživatele/role (LoginRequiredMixin)
   - [x] 1.3 Login
   - [x] 1.4 Logout
-  - [ ] 1.5 Registrační formulář
+  - [x] 1.5 Registrační formulář
 
 ## Požadavky pro uživatelský panel
   - [ ] 1.6 Email jako přihlašovací údaj
