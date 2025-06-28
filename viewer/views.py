@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -7,7 +8,7 @@ from viewer.forms import EventForm
 from viewer.models import Event
 
 
-# Create your views here.
+
 class EventDetailView(DetailView):
     model = Event
     template_name = "viewer/event_detail.html"
@@ -21,7 +22,7 @@ class EventListView(ListView):
     ordering = ["start_date"]
 
 
-class EventFormView(FormView):
+class EventFormView(LoginRequiredMixin, FormView): #vyžaduje přihlášení
     template_name = "viewer/form.html"
     form_class = EventForm
     success_url = reverse_lazy('event-list')
@@ -37,7 +38,7 @@ class EventFormView(FormView):
             start_time=cleaned_data['start_time'],
             end_time=cleaned_data['end_time'],
             location=cleaned_data['location'],
-            owner_of_event=self.request.user  # ← tady je klíčová změna
+            owner_of_event=self.request.user
         )
         return super().form_valid(form)
 

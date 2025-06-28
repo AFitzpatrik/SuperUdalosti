@@ -1,0 +1,89 @@
+{% extends 'viewer/base.html' %}
+
+{% block title %}
+Registrace | Super Události
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>Registrace nového uživatele</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="event-card">
+            <form method="post">
+                {% csrf_token %}
+                
+                {% if form.errors %}
+                    <div class="errorlist">
+                        <h3>Opravte následující chyby:</h3>
+                        {{ form.errors }}
+                    </div>
+                {% endif %}
+                
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                    {{ form.username }}
+                    {% if form.username.help_text %}
+                        <small>{{ form.username.help_text }}</small>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+                    {{ form.first_name }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+                    {{ form.last_name }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                    {{ form.email }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+                    {{ form.password1 }}
+                    {% if form.password1.help_text %}
+                        <small>{{ form.password1.help_text }}</small>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+                    {{ form.password2 }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.date_of_birth.id_for_label }}">{{ form.date_of_birth.label }}</label>
+                    {{ form.date_of_birth }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.biography.id_for_label }}">{{ form.biography.label }}</label>
+                    {{ form.biography }}
+                </div>
+                
+                <div class="form-group">
+                    <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
+                    {{ form.phone }}
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="cta-btn">Vytvořit účet</button>
+                </div>
+            </form>
+            
+            <div class="text-center" style="margin-top: 20px;">
+                <p>Už máte účet? <a href="{% url 'login' %}">Přihlaste se zde</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
