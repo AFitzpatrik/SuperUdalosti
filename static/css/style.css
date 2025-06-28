@@ -16,7 +16,7 @@
     --first-color: #e7eaf6;    /* Nejsvětlejší - pozadí */
     --second-color: #a2a8d3;   /* Světlá */
     --third-color: #38598b;    /* Tmavá */
-    --fourth-color: #113f67;   /* Nejtmavší */
+    --fourth-color: #113f67;   /* Nejtmavější */
 }
 
 /* ========================================
@@ -186,8 +186,6 @@ a:hover {
     background-color: #2d7a4a;
     color: white;
 }
-
-
 
 /* ========================================
    TLAČÍTKA

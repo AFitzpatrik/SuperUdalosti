@@ -44,7 +44,7 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 - [ ] **1.0 Registrace a přihlášení uživatele**
   - [ ] 1.1 Zobrazení přihlášeného uživatele
   - [ ] 1.2 Omezení zobrazení pouze pro přihlášené uživatele/role (LoginRequiredMixin)
-  - [ ] 1.3 Login
+  - [x] 1.3 Login
   - [ ] 1.4 Logout
   - [ ] 1.5 Registrační formulář
 

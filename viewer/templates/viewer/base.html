@@ -17,11 +17,26 @@
             <li><a href="{% url 'homepage' %}">Domů</a></li>
             <li><a href="{% url 'event-list' %}">Seznam Událostí</a></li>
             <li><a href="#">Vyhledávání</a></li>
+            <li><a href="{% url 'event-create' %}">Přidat událost</a></li>
             <li><a href="#">O nás</a></li>
-            <li><a href="#">Přihlášení</a></li>
-            <li><a href="#">Registrace</a></li>
+            
+            {% if user.is_authenticated %}
+                <li><span>Vítejte, {{ user.first_name|default:user.username }}</span></li>
+                <li><a href="{% url 'logout' %}">Odhlásit</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Přihlášení</a></li>
+                <li><a href="{% url 'signup' %}">Registrace</a></li>
+            {% endif %}
         </ul>
     </div>
+    <div>
+        {% if user.is_authenticated %}
+            {{ user.username|default:user.username }}
+        {% else %}
+            Nepřihlášený uživatel
+        {% endif %}
+    </div>
+
 </nav>
 
 <main class="container">
