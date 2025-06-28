@@ -176,6 +176,19 @@ a:hover {
     text-decoration: none;
 }
 
+/* Zelená varianta tlačítka */
+.btn-green {
+    background-color: #1a5a32;
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: #2d7a4a;
+    color: white;
+}
+
+
+
 /* ========================================
    TLAČÍTKA
    ======================================== */
