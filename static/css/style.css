@@ -1,125 +1,594 @@
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
+/* ========================================
+   CLEAN EVENTS CSS - SUPER UDÁLOSTI
+   ======================================== */
 
-h2 {
-  font-size: 1.4rem;
-  margin: 1.5rem 0 0.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin: 1.5rem 0 0.5rem;
-}
-
-.event-dates {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  margin: 1rem 0 2rem; /* více dolní mezery */
-}
-
-p {
-  line-height: 1.6;
-  margin-bottom: 1rem; /* mezera pod odstavcem */
-}
-
-.event-image {
-  display: block;
-  max-width: 60%;
-  margin: 2rem auto; /* střed + odstup */
-  border-radius: 8px;
-}
-
-ul {
-  margin-top: 1rem;
-  padding-left: 1.5rem; /* odsadit tečky */
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
+/* CSS Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background: #e2e4e2;
-    font-family: 'Segoe UI', sans-serif;
-    color: #0f1a2d;
+/* ========================================
+   BAREVNÁ PALETA
+   ======================================== */
+:root {
+    --first-color: #e7eaf6;    /* Nejsvětlejší - pozadí */
+    --second-color: #a2a8d3;   /* Světlá */
+    --third-color: #38598b;    /* Tmavá */
+    --fourth-color: #113f67;   /* Nejtmavější */
 }
 
+/* ========================================
+   ZÁKLADNÍ STYLY
+   ======================================== */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--first-color);
+    color: var(--fourth-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0f1a2d;
-    padding: 1rem 2rem;
+/* ========================================
+   KONTEJNERY
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================
+   NAVIGACE
+   ======================================== */
+nav {
+    background-color: var(--fourth-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(17, 63, 103, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.navbar nav a,
-.navbar .logo a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.navbar nav a:hover,
-.navbar .logo a:hover {
-    color: #7a92b0;
-}
-
-.nav-left, .nav-right {
+nav .container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.logo a {
-    font-size: 1.4rem;
-    font-weight: bold;
+/* Logo */
+nav > .container > a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
-
-.content {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+nav > .container > a:hover {
+    color: var(--second-color);
 }
 
-footer {
+/* Navigační menu */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--third-color);
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    color: var(--second-color);
+    font-weight: 600;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-toggle:hover {
+    background-color: var(--third-color);
+    color: white;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown.active .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid var(--second-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(17, 63, 103, 0.2);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.dropdown-menu a {
+    color: var(--fourth-color);
+    padding: 2px 16px;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid var(--first-color);
+    transition: all 0.3s ease;
+    width: 100%;
+    line-height: 1;
+    min-height: unset;
+    margin: 0;
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--first-color);
+    color: var(--third-color);
+}
+
+/* ========================================
+   HLAVNÍ OBSAH
+   ======================================== */
+main {
+    padding: 40px 0;
+    min-height: calc(100vh - 120px);
+}
+
+/* ========================================
+   NADPISY
+   ======================================== */
+h1, h2, h3 {
+    color: var(--fourth-color);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
     text-align: center;
-    padding: 1rem 2rem;
-    background: #0f1a2d;
-    color: #ffffff;
-    font-size: 0.9rem;
+    margin-bottom: 40px;
 }
 
-footer a {
-    color: #ffffff;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   KARTY PRO UDÁLOSTI
+   ======================================== */
+.event-card {
+    background-color: white;
+    border: 1px solid var(--second-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    box-shadow: none;
+    border-color: var(--second-color);
+    background-color: white;
+}
+
+/* ========================================
+   OBRÁZKY
+   ======================================== */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* ========================================
+   ODKAZY
+   ======================================== */
+a {
+    color: var(--third-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--fourth-color);
     text-decoration: underline;
 }
 
+/* Akční tlačítka */
+.btn, .action-link {
+    background-color: var(--third-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.btn:hover, .action-link:hover {
+    background-color: var(--fourth-color);
+    color: white;
+    text-decoration: none;
+}
+
+/* Zelená varianta tlačítka */
+.btn-green {
+    background-color: #1a5a32;
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: #2d7a4a;
+    color: white;
+}
+
+/* Červená varianta tlačítka */
+.btn-red {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-red:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+/* ========================================
+   TLAČÍTKA
+   ======================================== */
+button {
+    background-color: var(--third-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--fourth-color);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   FORMULÁŘE
+   ======================================== */
+form {
+    background-color: white;
+    border: 1px solid var(--second-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 25px 0;
+}
+
+textarea, input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--second-color);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    background-color: white;
+    color: var(--fourth-color);
+}
+
+textarea:focus, input:focus, select:focus {
+    outline: none;
+    border-color: var(--third-color);
+    box-shadow: 0 0 0 3px rgba(56, 89, 139, 0.1);
+}
+
+textarea::placeholder, input::placeholder {
+    color: var(--second-color);
+}
+
+/* ========================================
+   TABULKY
+   ======================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--second-color);
+}
+
+th {
+    background-color: var(--third-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* ========================================
+   PATIČKA
+   ======================================== */
+footer {
+    background-color: var(--fourth-color);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+footer a {
+    color: var(--second-color);
+}
+
 footer a:hover {
-    color: #7a92b0;
+    color: white;
 }
 
-.event-dates {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin: 1rem 0;
+/* ========================================
+   GRID SYSTÉM
+   ======================================== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
 }
 
+.col-12 {
+    flex: 0 0 100%;
+    padding: 0 15px;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    padding: 0 15px;
+}
+
+.col-lg-4 {
+    flex: 0 0 33.333333%;
+    padding: 0 15px;
+}
+
+.col-md-3 {
+    flex: 0 0 25%;
+    padding: 0 15px;
+}
+
+.col-md-9 {
+    flex: 0 0 75%;
+    padding: 0 15px;
+}
+
+/* ========================================
+   UTILITY TŘÍDY
+   ======================================== */
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+/* ========================================
+   CHYBOVÉ ZPRÁVY
+   ======================================== */
+.errorlist {
+    color: #b30000;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 6px 0 0 0;
+    font-size: 0.98rem;
+    text-align: left;
+    max-width: 100%;
+    box-shadow: none;
+    list-style: none;
+}
+
+.errorlist li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ========================================
+   RESPONZIVNÍ DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    nav .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .col-md-6, .col-lg-4, .col-md-3, .col-md-9 {
+        flex: 0 0 100%;
+    }
+
+    .d-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .justify-content-between {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .event-card {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    /* Dropdown na mobilu */
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background-color: var(--third-color);
+        margin-top: 10px;
+    }
+    
+    .dropdown-menu a {
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .dropdown-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--second-color);
+    }
+}
+
+/* Menší tlačítko pro navbar */
+.btn-navbar {
+    padding: 8px 16px;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+/* Signup grid layout */
+.signup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+}
+.signup-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.signup-card input, .signup-card select {
+    padding: 12px 14px;
+    border: 2px solid #a2a8d3;
+    border-radius: 7px;
+    font-size: 1.08rem;
+    background: #f8f9fb;
+    transition: border-color 0.2s;
+}
+.signup-card input:focus, .signup-card select:focus {
+    border-color: #38598b;
+    outline: none;
+    background: #fff;
+}
+@media (max-width: 700px) {
+    .signup-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,27 @@
+{% extends 'viewer/base.html' %}
+
+{% block title %}
+Formulář | Super Události
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>Nový formulář</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <div class="text-center">
+                <button type="submit">Odeslat</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

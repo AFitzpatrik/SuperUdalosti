@@ -1,0 +1,17 @@
+{% extends 'viewer/base.html' %}
+
+{% block title %}
+Registrace úspěšná | Super Události
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12" style="display: flex; justify-content: center;">
+        <div class="event-card" style="padding: 40px 40px; margin-top: 40px; max-width: 500px; width: 100%; box-shadow: 0 4px 24px rgba(56,89,139,0.08); border-radius: 16px; text-align: center;">
+            <h1 style="color: var(--third-color); margin-bottom: 18px;">Registrace byla úspěšná!</h1>
+            <p style="font-size: 1.1rem; margin-bottom: 32px;">Váš účet byl úspěšně vytvořen. Nyní se můžete přihlásit ke svému účtu.</p>
+            <a href="{% url 'login' %}" class="btn btn-green" style="font-size: 1.1rem; min-width: 160px;">Přihlásit se</a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

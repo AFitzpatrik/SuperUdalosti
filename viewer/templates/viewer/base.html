@@ -2,35 +2,79 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Super Události{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
-<header class="navbar">
-    <nav class="nav-left">
-        <a href="{% url 'homepage' %}">Home</a>
-        <a href="{% url 'event-list' %}">Seznam Událostí</a>
-        <a href="#">Vyhledávání</a>
-    </nav>
-    <div class="logo">
+<nav>
+    <div class="container">
         <a href="/">Super Události</a>
+        
+        <ul>
+            <li><a href="{% url 'homepage' %}">Domů</a></li>
+            <li><a href="{% url 'event-list' %}">Seznam Událostí</a></li>
+            <li><a href="#">Vyhledávání</a></li>
+            <li><a href="#">O nás</a></li>
+            
+            {% if user.is_authenticated %}
+                {% if user.groups.all.0.name == 'organizatori' %}
+                <li><a href="{% url 'event-create' %}" class="btn btn-green btn-navbar">➕ Přidat událost</a></li>
+                {% endif %}
+                <li class="dropdown">
+                    <div class="dropdown-toggle">
+                        Vítej, {{ user.first_name|default:user.username }}
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'password-change' %}">Změna hesla</a></li>
+                        <li><a href="#">Můj profil</a></li>
+                        <li><a href="#">Moje události</a></li>
+                        <li><a href="{% url 'logout' %}">Odhlásit</a></li>
+                    </ul>
+                </li>
+            {% else %}
+                <li><a href="{% url 'signup' %}" class="btn btn-green btn-navbar">Registrace</a></li>
+                <li><a href="{% url 'login' %}" class="btn btn-green btn-navbar">Přihlášení</a></li>
+            {% endif %}
+        </ul>
     </div>
-    <nav class="nav-right">
-        <a href="#">O nás</a>
-        <a href="#">Přihlášení</a>
-    </nav>
-</header>
+</nav>
 
-<main class="content">
+<main class="container">
     {% block content %}
     {% endblock %}
 </main>
 
 <footer>
-    <p>&copy; 2025 Super Události | Franců Patrik | </p>
+    <div class="container">
+        <p>&copy; 2025 Super Události | Vytvořil <a href="https://github.com/AFitzpatrik">Franců Patrik</a></p>
+    </div>
 </footer>
+
+<script>
+// Dropdown menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>

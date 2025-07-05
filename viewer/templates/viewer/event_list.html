@@ -1,21 +1,61 @@
 {% extends 'viewer/base.html' %}
+{% load static %}
 
 {% block title %}
-Seznam událostí | Super Události
+Seznam Událostí | Super Události
 {% endblock %}
 
 {% block content %}
-<h1>Seznam událostí</h1>
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Seznam událostí</h1>
+            {% if perms.viewer.add_event %}
+            <a href="{% url 'event-create' %}" class="btn btn-green">➕ Přidat novou událost</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
-<ul>
-  {% for event in events %}
-    <li>
-      <a href="{% url 'event-detail' event.pk %}">
-        {{ event.name }} ({{ event.start_date|date:"d.m.Y" }})
-      </a>
-    </li>
-  {% empty %}
-    <li>Žádné události nejsou k dispozici.</li>
-  {% endfor %}
-</ul>
+<div class="row">
+    {% for event in events %}
+    <div class="col-12">
+        <div class="event-card">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="{% url 'event-detail' event.pk %}">
+                        {% if event.event_image %}
+                        <img src="{{ event.event_image.url }}" alt="{{ event.name }}">
+                        {% else %}
+                        <img src="{% static 'images/placeholder.png' %}" alt="Placeholder image">
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="col-md-9">
+                    <h3>
+                        <a href="{% url 'event-detail' event.pk %}">
+                            {{ event.name }}
+                        </a>
+                    </h3>
+                    <p style="color: #38598b; margin-bottom: 15px;">
+                        <strong>{{ event.start_date|date:"d.m.Y" }} - {{ event.end_date|date:"d.m.Y" }}</strong>
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        {{ event.description|slice:":200" }}{% if event.description|length > 200 %}...{% endif %}
+                    </p>
+                    <a href="{% url 'event-detail' event.pk %}" class="btn">Zobrazit detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="event-card text-center">
+            <h3>Žádné události zatím nejsou</h3>
+            <p style="margin-bottom: 20px;">Buďte první, kdo přidá událost!</p>
+            <a href="{% url 'event-create' %}" class="btn">Přidat první událost</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

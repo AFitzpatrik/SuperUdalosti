@@ -17,10 +17,14 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.contrib.auth.views import LoginView, PasswordChangeView, PasswordResetView
+from django.urls import path, include
+from django.views.generic import TemplateView
 
+from accounts.forms import MyAuthForm, MyPasswordChangeForm
+from accounts.views import SignUpView, user_logout
 from viewer import views
-from viewer.views import HomepageView, EventListView
+from viewer.views import HomepageView, EventListView, EventFormView, EventUpdateView, EventDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +32,19 @@ urlpatterns = [
     path('event/<int:pk>/', views.EventDetailView.as_view(), name='event-detail'),
     path('events/', EventListView.as_view(), name='event-list'),
     path('', HomepageView.as_view(), name='homepage'),
+    path('event/create/', EventFormView.as_view(), name='event-create'),
+    path('event/<int:pk>/update/', EventUpdateView.as_view(), name='event-update'),
+    path('event/<int:pk>/delete/', EventDeleteView.as_view(), name='event-delete'),
+
+
+    path('accounts/',include ('django.contrib.auth.urls')),
+    path('accounts/signup', SignUpView.as_view(), name='signup'),
+    path('accounts/registration-success/', TemplateView.as_view(template_name='registration_success.html'), name='registration-success'),
+    path('accounts/login/', LoginView.as_view(template_name='login_page.html', authentication_form=MyAuthForm),name='login'),
+    path('accounts/logout/', user_logout, name='logout'),
+    path('accounts/password_change/',PasswordChangeView.as_view(template_name='password_change.html', form_class=MyPasswordChangeForm),name='password-change'),
+    path('accounts/password_reset/', PasswordResetView.as_view(template_name='password_reset.html'),name='password-reset'),
+    # ostaní defaultní cesty
 
 ]
 
