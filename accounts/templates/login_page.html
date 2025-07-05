@@ -5,12 +5,30 @@
 {% endblock %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <a href="{% url 'password-reset' %}" class="btn btn-primary" style="margin-bottom: 10px; display: inline-block;">Zapomněli jste heslo?</a>
-        <input type="submit" id="id_submit" value="Přihlásit" class="btn btn-primary">
-    </form>
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+        <div class="event-card" style="padding: 32px 24px; margin-top: 40px;">
+            <h1 style="text-align:center; margin-bottom: 24px; color: var(--third-color);">Přihlášení</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div style="margin-bottom: 18px;">
+                    {{ form.username.label_tag }}<br>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="errorlist">{{ form.username.errors }}</div>
+                    {% endif %}
+                </div>
+                <div style="margin-bottom: 18px;">
+                    {{ form.password.label_tag }}<br>
+                    {{ form.password }}
+                    {% if form.password.errors %}
+                        <div class="errorlist">{{ form.password.errors }}</div>
+                    {% endif %}
+                </div>
+                <a href="{% url 'password-reset' %}" class="btn btn-green" style="margin-bottom: 18px; width: 100%; display: block;">Zapomněli jste heslo?</a>
+                <button type="submit" class="btn btn-green" style="width: 100%; font-size: 1.1rem;">Přihlásit se</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}

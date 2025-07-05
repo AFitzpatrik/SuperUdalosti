@@ -225,13 +225,14 @@ h3 {
     border-radius: 8px;
     padding: 25px;
     margin: 20px 0;
-    box-shadow: 0 2px 8px rgba(17, 63, 103, 0.1);
+    box-shadow: none;
     transition: all 0.3s ease;
 }
 
 .event-card:hover {
-    box-shadow: 0 4px 15px rgba(17, 63, 103, 0.15);
-    transform: translateY(-2px);
+    box-shadow: none;
+    border-color: var(--second-color);
+    background-color: white;
 }
 
 /* ========================================
@@ -459,13 +460,23 @@ footer a:hover {
    CHYBOVÉ ZPRÁVY
    ======================================== */
 .errorlist {
-    color: #dc3545;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 15px 0;
+    color: #b30000;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 6px 0 0 0;
+    font-size: 0.98rem;
+    text-align: left;
+    max-width: 100%;
+    box-shadow: none;
     list-style: none;
+}
+
+.errorlist li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* ========================================
@@ -550,4 +561,34 @@ footer a:hover {
     padding: 8px 16px;
     font-size: 1rem;
     line-height: 1.2;
+}
+
+/* Signup grid layout */
+.signup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+}
+.signup-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.signup-card input, .signup-card select {
+    padding: 12px 14px;
+    border: 2px solid #a2a8d3;
+    border-radius: 7px;
+    font-size: 1.08rem;
+    background: #f8f9fb;
+    transition: border-color 0.2s;
+}
+.signup-card input:focus, .signup-card select:focus {
+    border-color: #38598b;
+    outline: none;
+    background: #fff;
+}
+@media (max-width: 700px) {
+    .signup-grid {
+        grid-template-columns: 1fr;
+    }
 }

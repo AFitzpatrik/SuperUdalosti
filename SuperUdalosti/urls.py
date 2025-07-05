@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, PasswordChangeView, PasswordResetView
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 from accounts.forms import MyAuthForm, MyPasswordChangeForm
 from accounts.views import SignUpView, user_logout
@@ -42,8 +43,7 @@ urlpatterns = [
     # ostaní defaultní cesty
     path('accounts/',include ('django.contrib.auth.urls')),
     path('accounts/signup', SignUpView.as_view(), name='signup'),
-
-
+    path('accounts/registration-success/', TemplateView.as_view(template_name='registration_success.html'), name='registration-success'),
 ]
 
 

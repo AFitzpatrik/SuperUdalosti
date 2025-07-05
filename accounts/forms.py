@@ -2,6 +2,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, Pass
 from django.db.transaction import atomic
 from django.forms import DateField, NumberInput, CharField, Textarea
 from django.views.generic import FormView
+from django.core.exceptions import ValidationError
+import datetime
 
 from accounts.models import Profile
 
@@ -48,6 +50,11 @@ class SignUpForm(UserCreationForm):
         required=False
     )
 
+    def clean_date_of_birth(self):
+        dob = self.cleaned_data.get('date_of_birth')
+        if dob and dob > datetime.date.today():
+            raise ValidationError('Datum narození nemůže být v budoucnosti.')
+        return dob
 
     #ZDE DODĚLAT CLEAN METODY
 

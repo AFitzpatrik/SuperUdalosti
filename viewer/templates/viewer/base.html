@@ -16,13 +16,13 @@
         <ul>
             <li><a href="{% url 'homepage' %}">Domů</a></li>
             <li><a href="{% url 'event-list' %}">Seznam Událostí</a></li>
-            {% if user.is_authenticated and user.groups.all.0.name == 'organizatori' %}
-            <li><a href="{% url 'event-create' %}" class="btn btn-green btn-navbar">➕ Přidat událost</a></li>
-            {% endif %}
             <li><a href="#">Vyhledávání</a></li>
             <li><a href="#">O nás</a></li>
             
             {% if user.is_authenticated %}
+                {% if user.groups.all.0.name == 'organizatori' %}
+                <li><a href="{% url 'event-create' %}" class="btn btn-green btn-navbar">➕ Přidat událost</a></li>
+                {% endif %}
                 <li class="dropdown">
                     <div class="dropdown-toggle">
                         Vítej, {{ user.first_name|default:user.username }}
