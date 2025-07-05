@@ -54,7 +54,7 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] 1.8 Heslo 8–30 znaků
   - [ ] 1.9 Zobrazované jméno – nepovolené prázdné nebo jen mezery
   - [ ] 1.10 Role: běžný uživatel / organizátor
-  - [ ] 1.11 Heslo bezpečně uložené (hash)
+  - [x] 1.11 Heslo bezpečně uložené (hash)
 
 
 - [x] **2.0 Přidávání událostí**

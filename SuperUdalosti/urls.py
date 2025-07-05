@@ -36,14 +36,16 @@ urlpatterns = [
     path('event/<int:pk>/update/', EventUpdateView.as_view(), name='event-update'),
     path('event/<int:pk>/delete/', EventDeleteView.as_view(), name='event-delete'),
 
+
+    path('accounts/',include ('django.contrib.auth.urls')),
+    path('accounts/signup', SignUpView.as_view(), name='signup'),
+    path('accounts/registration-success/', TemplateView.as_view(template_name='registration_success.html'), name='registration-success'),
     path('accounts/login/', LoginView.as_view(template_name='login_page.html', authentication_form=MyAuthForm),name='login'),
     path('accounts/logout/', user_logout, name='logout'),
     path('accounts/password_change/',PasswordChangeView.as_view(template_name='password_change.html', form_class=MyPasswordChangeForm),name='password-change'),
     path('accounts/password_reset/', PasswordResetView.as_view(template_name='password_reset.html'),name='password-reset'),
     # ostaní defaultní cesty
-    path('accounts/',include ('django.contrib.auth.urls')),
-    path('accounts/signup', SignUpView.as_view(), name='signup'),
-    path('accounts/registration-success/', TemplateView.as_view(template_name='registration_success.html'), name='registration-success'),
+
 ]
 
 
