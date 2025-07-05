@@ -1,0 +1,38 @@
+{% extends 'viewer/base.html' %}
+
+{% block title %}
+    Potvrzení smazání události
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="event-card" style="text-align: center; padding: 40px;">
+            <h1 style="color: #e74c3c; margin-bottom: 20px;">⚠️ Potvrzení smazání</h1>
+            <h2 style="color: #38598b; margin-bottom: 20px;">Opravdu chcete smazat událost?</h2>
+            
+            <div style="background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                <h3 style="color: #856404; margin-bottom: 15px;">{{ object.name }}</h3>
+                <p style="color: #856404; margin-bottom: 10px;"><strong>Datum:</strong> {{ object.start_date|date:"d.m.Y" }}</p>
+                <p style="color: #856404; margin-bottom: 10px;"><strong>Místo:</strong> {{ object.location.name }}</p>
+                <p style="color: #856404;"><strong>Organizátor:</strong> {{ object.owner_of_event.get_full_name|default:object.owner_of_event.username }}</p>
+            </div>
+            
+            <p style="color: #721c24; margin-bottom: 30px; font-weight: 600;">
+                ⚠️ Tato akce je nevratná! Po smazání nebude možné událost obnovit.
+            </p>
+            
+            <form method="post" style="display: inline-block;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-red" style="margin-right: 15px;">
+                    🗑️ Ano, smazat událost
+                </button>
+            </form>
+            
+            <a href="{% url 'event-detail' object.pk %}" class="btn btn-green">
+                ❌ Zrušit
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

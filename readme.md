@@ -43,7 +43,7 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 
 - [x] **1.0 Registrace a přihlášení uživatele**
   - [x] 1.1 Zobrazení přihlášeného uživatele
-  - [ ] 1.2 Omezení zobrazení pouze pro přihlášené uživatele/role (LoginRequiredMixin)
+  - [x] 1.2 Omezení zobrazení pouze pro přihlášené uživatele/role (LoginRequiredMixin)
   - [x] 1.3 Login
   - [x] 1.4 Logout
   - [x] 1.5 Registrační formulář
@@ -57,8 +57,8 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
   - [ ] 1.11 Heslo bezpečně uložené (hash)
 
 
-- [ ] **2.0 Přidávání událostí**
-  - [ ] 2.1 Přidávat může jen organizátor *DODĚLAT PO HOTOVÉ FEATURE 1.0
+- [x] **2.0 Přidávání událostí**
+  - [x] 2.1 Přidávat může jen organizátor *DODĚLAT PO HOTOVÉ FEATURE 1.0
   - [x] 2.1 Název (povinný)
   - [x] 2.2 Datum od/do (povinný)
   - [x] 2.3 Popis (min. 20 znaků)
@@ -109,6 +109,10 @@ Finalni_projekt_sluzba_sdruzovani_udalosti/
 - [ ] **11.0 Externí frontend aplikace**
   - [ ] 11.1 Využívá REST API pro zobrazení událostí
   - [ ] 11.2 (volitelně) filtrování na straně frontend aplikace
+
+- [ ] **12.0 Autorizace**
+  - [x] 12.1 Přidat událost může pouze uživatel s rolí ORGANIZÁTOR
+  - [ ] 13.1 Upravit, smazat svojí událost může také pouze ORGANIZÁTOR
 
 
 ### Struktura databáze

@@ -286,6 +286,17 @@ a:hover {
     color: white;
 }
 
+/* Červená varianta tlačítka */
+.btn-red {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-red:hover {
+    background-color: #c82333;
+    color: white;
+}
+
 /* ========================================
    TLAČÍTKA
    ======================================== */

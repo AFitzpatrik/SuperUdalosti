@@ -1,0 +1,14 @@
+{% extends 'viewer/base.html' %}
+
+{% block title %}
+    Nemáte potřebná oprávnění
+{% endblock %}
+
+{% block content %}
+    <div style="text-align: center; padding: 40px; background-color: white; border-radius: 8px; border: 1px solid #a2a8d3; margin: 20px 0;">
+        <h1 style="color: #e74c3c; margin-bottom: 20px;">Chyba 403</h1>
+        <h2 style="color: #38598b; margin-bottom: 20px;">Nemáte potřebná oprávnění</h2>
+        <p style="margin-bottom: 30px;">Omlouváme se, ale nemáte oprávnění k přístupu na tuto stránku.</p>
+        <a href="{% url 'homepage' %}" class="btn">Zpět na hlavní stránku</a>
+    </div>
+{% endblock %}

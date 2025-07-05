@@ -23,7 +23,7 @@ from django.urls import path, include
 from accounts.forms import MyAuthForm, MyPasswordChangeForm
 from accounts.views import SignUpView, user_logout
 from viewer import views
-from viewer.views import HomepageView, EventListView, EventFormView
+from viewer.views import HomepageView, EventListView, EventFormView, EventUpdateView, EventDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +32,8 @@ urlpatterns = [
     path('events/', EventListView.as_view(), name='event-list'),
     path('', HomepageView.as_view(), name='homepage'),
     path('event/create/', EventFormView.as_view(), name='event-create'),
+    path('event/<int:pk>/update/', EventUpdateView.as_view(), name='event-update'),
+    path('event/<int:pk>/delete/', EventDeleteView.as_view(), name='event-delete'),
 
     path('accounts/login/', LoginView.as_view(template_name='login_page.html', authentication_form=MyAuthForm),name='login'),
     path('accounts/logout/', user_logout, name='logout'),

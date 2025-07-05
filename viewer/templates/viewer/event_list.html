@@ -10,7 +10,7 @@ Seznam Událostí | Super Události
     <div class="col-12">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1>Seznam událostí</h1>
-            {% if user.is_authenticated %}
+            {% if perms.viewer.add_event %}
             <a href="{% url 'event-create' %}" class="btn btn-green">➕ Přidat novou událost</a>
             {% endif %}
         </div>
