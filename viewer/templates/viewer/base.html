@@ -17,7 +17,7 @@
             <li><a href="{% url 'homepage' %}">Domů</a></li>
             <li><a href="{% url 'event-list' %}">Seznam Událostí</a></li>
             <li><a href="#">Vyhledávání</a></li>
-            <li><a href="#">O nás</a></li>
+            <li><a href="{% url 'about-us' %}">O nás</a></li>
             
             {% if user.is_authenticated %}
                 {% if user.groups.all.0.name == 'organizatori' %}

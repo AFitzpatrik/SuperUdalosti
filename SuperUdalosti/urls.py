@@ -44,6 +44,7 @@ urlpatterns = [
     path('accounts/logout/', user_logout, name='logout'),
     path('accounts/password_change/',PasswordChangeView.as_view(template_name='password_change.html', form_class=MyPasswordChangeForm),name='password-change'),
     path('accounts/password_reset/', PasswordResetView.as_view(template_name='password_reset.html'),name='password-reset'),
+    path('about/', TemplateView.as_view(template_name='viewer/about_us.html'), name='about-us'),
     # ostaní defaultní cesty
 
 ]

@@ -1,1 +1,35 @@
 {% extends 'viewer/base.html' %}
+
+{% block title %}
+O nás | Super Události
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12" style="display: flex; justify-content: center;">
+        <div class="event-card" style="padding: 36px 36px; max-width: 700px; width: 100%; margin-bottom: 40px; text-align: center;">
+            <h1 style="color: var(--third-color); margin-bottom: 18px;">O nás</h1>
+            <img src="/media/company_images/centrala.png" alt="Sídlo společnosti" style="max-width: 320px; width: 100%; border-radius: 12px; box-shadow: 0 2px 12px #a2a8d355; margin-bottom: 18px;">
+            <p style="font-size: 1.13rem; margin-bottom: 18px; color: #38598b;">Naše společnost Super Události je přední platformou pro sdružování, organizaci a propagaci kulturních, sportovních i společenských akcí v celé České republice. Naším cílem je propojovat lidi, kteří chtějí zažít něco výjimečného, a organizátory, kteří chtějí své akce dostat k co nejširšímu publiku. Věříme, že každý si zaslouží najít tu pravou událost pro sebe – ať už jde o historický festival, letní koncert, sportovní turnaj nebo rodinný karneval.</p>
+            <p style="font-size: 1.05rem; color: #38598b;">Sídlo společnosti: Praha, Česká republika</p>
+        </div>
+    </div>
+</div>
+<div class="about-grid">
+    <div class="event-card" style="padding: 18px; max-width: 320px; width: 100%; text-align: center;">
+        <img src="/media/company_images/rytiri.png" alt="Rytířský turnaj" style="max-width: 100%; border-radius: 10px; margin-bottom: 12px;">
+        <h3 style="color: var(--third-color); margin-bottom: 8px;">Historické slavnosti</h3>
+        <p style="font-size: 0.98rem; color: #38598b;">Zažijte atmosféru středověku na našich tematických akcích s rytířskými turnaji, dobovou hudbou a tradičními řemesly.</p>
+    </div>
+    <div class="event-card" style="padding: 18px; max-width: 320px; width: 100%; text-align: center;">
+        <img src="/media/company_images/plaz.png" alt="Letní festival na pláži" style="max-width: 100%; border-radius: 10px; margin-bottom: 12px;">
+        <h3 style="color: var(--third-color); margin-bottom: 8px;">Letní festivaly</h3>
+        <p style="font-size: 0.98rem; color: #38598b;">Hudba, tanec, slunce a zábava – naše letní festivaly na pláži přinášejí nezapomenutelné zážitky pro všechny generace.</p>
+    </div>
+    <div class="event-card" style="padding: 18px; max-width: 320px; width: 100%; text-align: center;">
+        <img src="/media/company_images/karneval.png" alt="Rodinný karneval" style="max-width: 100%; border-radius: 10px; margin-bottom: 12px;">
+        <h3 style="color: var(--third-color); margin-bottom: 8px;">Rodinné karnevaly</h3>
+        <p style="font-size: 0.98rem; color: #38598b;">Barevné masky, soutěže a radost pro malé i velké – naše karnevaly jsou ideální volbou pro rodiny s dětmi.</p>
+    </div>
+</div>
+{% endblock %}
